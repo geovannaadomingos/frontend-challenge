@@ -1,16 +1,5 @@
 # Teste para Desenvolvedor(a) Front-End Next.js
 
-## Introdução
-
-Bem-vindo(a) ao processo seletivo para a posição de **Desenvolvedor(a) Front-End** em nossa equipe! Este teste tem como objetivo avaliar suas habilidades técnicas em **Next.js**, **React** e as demais tecnologias mencionadas na descrição da vaga.
-
-## Instruções
-
-- Faça um **fork** deste repositório para o seu GitHub pessoal.
-- Desenvolva a aplicação conforme as especificações abaixo, seguindo as **melhores práticas de desenvolvimento**.
-- Após a conclusão, envie o link do seu repositório para avaliação.
-- Sinta-se à vontade para adicionar qualquer documentação ou comentários que julgar necessário.
-
 ## Desafio
 
 ### Contexto
@@ -126,6 +115,4 @@ Os seguintes aspectos serão considerados na avaliação:
 - **Histórico de Commits**: Uso adequado do Git com commits bem descritos.
 
 ---
-
-Boa sorte! Estamos ansiosos para conhecer o seu trabalho e potencial.
 
