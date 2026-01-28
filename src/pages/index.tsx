@@ -1,5 +1,7 @@
+import styles from './Home.module.scss';
 import { useNFTList } from '@/hooks/useNFTList';
 import { NFTGrid } from '@/components/NFTGrid/NFTGrid';
+import { NFTCard } from '@/components/NFTCard/NFTCard';
 
 export default function Home() {
   const { data, isLoading, error } = useNFTList({
@@ -13,14 +15,10 @@ export default function Home() {
   if (error) return <div>Erro ao carregar NFTs</div>;
 
   return (
-    <main>
-      <h1>NFTs</h1>
-
+    <main className={styles.main}>
       <NFTGrid>
         {data?.map((nft) => (
-          <div key={nft.id}>
-            {nft.name}
-          </div>
+          <NFTCard key={nft.id} nft={nft} />
         ))}
       </NFTGrid>
     </main>
