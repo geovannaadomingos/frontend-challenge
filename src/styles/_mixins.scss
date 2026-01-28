@@ -1,0 +1,30 @@
+@mixin flex($align: center, $justify: center, $gap: 0) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+$bp-lg: 1024px;
+$bp-md: 768px;
+$bp-sm: 480px;
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==lg {
+        @media (max-width: $bp-lg) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==md {
+        @media (max-width: $bp-md) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==sm {
+        @media (max-width: $bp-sm) {
+            @content;
+        }
+    }
+}
