@@ -3,6 +3,6 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(0, 345px));
-  gap: $spacing-xl;
+  gap: $spacing-lg;
   justify-content: center;
 }
