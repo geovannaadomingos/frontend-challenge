@@ -11,10 +11,27 @@
 
     .cart {
         display: flex;
+        align-items: center;
         gap: 9px;
+
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        color: $color-white;
         font-weight: 400;
         font-size: $font-size-lg;
-        color: $color-white;
-        align-items: center;
+
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-orange;
+            outline-offset: 4px;
+        }
     }
 }

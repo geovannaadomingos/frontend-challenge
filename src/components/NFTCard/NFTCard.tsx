@@ -12,7 +12,7 @@ export function NFTCard({ nft }: NFTCardProps) {
     const dispatch = useDispatch<AppDispatch>();
 
     const isInCart = useSelector((state: RootState) =>
-        state.cart.items.includes(nft.id)
+        state.cart.items.some(item => item.id === nft.id)
     );
 
     function handleClick() {
