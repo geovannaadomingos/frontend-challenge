@@ -25,6 +25,7 @@
     gap: 40px;
 
     .title {
+      font-style: medium;
       font-weight: 500;
       font-size: $font-size-xl;
       color: $color-white;
@@ -53,11 +54,15 @@
   }
 
   .items {
+    gap: 17px;
+    display: flex;
+    flex-direction: column;
+    margin: $spacing-xl 0;
+
     .empty {
       font-size: $font-size-md;
       color: $color-gray-light;
       text-align: center;
-      margin: $spacing-xl 0;
     }
   }
 

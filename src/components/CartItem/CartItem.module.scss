@@ -1,0 +1,91 @@
+@use '@/styles/variables' as *;
+
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2B2B2B;
+    border: none;
+    border-radius: $radius-md;
+    padding: 17px 30px;
+    gap: 31px;
+    color: $color-white;
+
+    .image {
+        width: auto;
+        height: 161px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: $radius-md;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: $spacing-sm;
+
+        .title {
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .description {
+            font-weight: 300;
+            font-size: $font-size-xs;
+            color: $color-gray-light;
+        }
+
+        .price {
+            padding: 20px 0 24px;
+            display: flex;
+            align-items: center;
+            gap: $spacing-sm;
+            min-width: 0;
+
+            .ethIcon {
+                flex-shrink: 0;
+                width: 24px;
+                height: 24px;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: $font-size-lg;
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .quantityControl {
+                display: flex;
+                align-items: center;
+                gap: $spacing-sm;
+                padding: 8px 12px;
+                background-color: $color-gray-dark;
+                border: none;
+                border-radius: $radius-md;
+
+                button {
+                    color: $color-white;
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+
+            .trashButton {
+                background-color: $color-orange;
+                border: none;
+                border-radius: 50%;
+                height: 43px;
+                width: 43px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ export function NFTCard({ nft }: NFTCardProps) {
         if (isInCart) {
             dispatch(removeItem(nft.id));
         } else {
-            dispatch(addItem(nft.id));
+            dispatch(addItem(nft));
         }
     }
 

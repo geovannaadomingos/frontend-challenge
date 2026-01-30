@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-interface CartItem {
-    id: number;
+import { NFT } from '@/types/nft.types';
+interface CartItem extends NFT {
     quantity: number;
 }
 
@@ -19,12 +18,16 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItem(state, action: { payload: number }) {
-            const item = state.items.find(i => i.id === action.payload);
+        addItem(state, action: { payload: NFT }) {
+            const item = state.items.find(i => i.id === action.payload.id);
+
             if (item) {
                 item.quantity += 1;
             } else {
-                state.items.push({ id: action.payload, quantity: 1 });
+                state.items.push({
+                    ...action.payload,
+                    quantity: 1,
+                });
             }
         },
         removeItem(state, action: { payload: number }) {

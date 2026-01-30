@@ -7,7 +7,6 @@ import styles from './CartDrawer.module.scss';
 export function CartDrawer() {
     const dispatch = useDispatch();
     const { items, isOpen } = useSelector((state: RootState) => state.cart);
-
     if (!isOpen) return null;
 
     return (
@@ -17,7 +16,10 @@ export function CartDrawer() {
                 onClick={(e) => e.stopPropagation()}
             >
                 <header className={styles.header}>
-                    <button className={styles.closeButton} onClick={() => dispatch(closeCart())}>
+                    <button
+                        className={styles.closeButton}
+                        onClick={() => dispatch(closeCart())}
+                    >
                         <img src="/assets/close-icon.svg" alt="Fechar carrinho" />
                     </button>
                     <h2 className={styles.title}>Mochila de Compras</h2>
@@ -29,10 +31,10 @@ export function CartDrawer() {
                     )}
 
                     {items.map(item => (
-                        <div key={item.id} className={styles.item}>
-                            <span>Item #{item.id}</span>
-                            <span>Qtd: {item.quantity}</span>
-                        </div>
+                        <CartItem
+                            key={item.id}
+                            nft={item}
+                        />
                     ))}
                 </div>
 
