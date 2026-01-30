@@ -1,20 +1,8 @@
-@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  align-items: stretch;
-
-  @include respond(lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @include respond(md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include respond(sm) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(0, 345px));
+  gap: $spacing-xl;
+  justify-content: center;
 }

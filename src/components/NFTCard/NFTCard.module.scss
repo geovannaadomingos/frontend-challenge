@@ -1,29 +1,29 @@
 @use '@/styles/variables' as *;
-@use '@/styles/mixins' as *;
 
 .card {
   background-color: $color-dark;
   border-radius: $radius-md;
   padding: $spacing-md;
-
   display: flex;
   flex-direction: column;
-  gap: $spacing-xl;
-  min-height: 555px;
-}
-
-.card img {
+  gap: $spacing-lg;
+  overflow: hidden;
   width: 100%;
-  height: 258px;
-
-  border-radius: $radius-md;
-  object-fit: cover;
+  max-width: 345px;
 }
 
-.card > div {
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: $radius-md;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;
+  flex: 1;
 }
 
 .title {
@@ -35,16 +35,21 @@
 .description {
   font-weight: 300;
   font-size: 12px;
-  line-height: 1.4;
   color: $color-gray-light;
+  line-height: 1.4;
 }
 
 .price {
-  @include flex(center, flex-start, $spacing-sm);
+  padding: 20px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  min-width: 0;
 
-  img {
-    width: 29px;
-    height: 29px;
+  .ethIcon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
   }
 
   span {
@@ -55,34 +60,20 @@
 }
 
 .button {
-  margin-top: auto;
   width: 100%;
-
-  padding: $spacing-sm $spacing-lg;
+  margin-top: auto;
+  padding: 22px;
   border-radius: $radius-md;
   border: none;
-
   background-color: $color-orange;
   color: $color-white;
-
+  font-family: $font-base;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 
   &:hover {
     opacity: 0.9;
-  }
-}
-
-/* 📱 Responsivo */
-@include respond(md) {
-  .card img {
-    height: 220px;
-  }
-}
-
-@include respond(sm) {
-  .card img {
-    height: 200px;
   }
 }
