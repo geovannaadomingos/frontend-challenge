@@ -1,0 +1,29 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    max-width: 403px;
+    padding-top: 136.5px;
+}
+
+.button {
+    padding: 30px;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    background-color: #393939;
+    color: $color-white;
+    width: 100%;
+    font-family: $font-base;
+
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
