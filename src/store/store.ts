@@ -1,15 +1,9 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-
-// Placeholder reducer
-const placeholderSlice = createSlice({
-  name: 'placeholder',
-  initialState: {},
-  reducers: {},
-});
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './cartSlice';
 
 export const store = configureStore({
   reducer: {
-    placeholder: placeholderSlice.reducer,
+    cart: cartReducer,
   },
 });
 
