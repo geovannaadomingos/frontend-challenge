@@ -24,6 +24,8 @@
         flex-direction: column;
         justify-content: space-around;
         gap: $spacing-sm;
+        flex: 1;
+        min-width: 0;
 
         .title {
             font-weight: 500;
@@ -87,5 +89,17 @@
                 align-items: center;
             }
         }
+    }
+}
+
+@media (max-width: 640px) {
+    .cartItem {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
     }
 }

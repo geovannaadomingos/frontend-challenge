@@ -1,13 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
-import { closeCart } from '@/store/cartSlice';
+import { closeCart, finalizePurchase } from '@/store/cartSlice';
 import { CartItem } from '@/components/CartItem/CartItem';
 import styles from './CartDrawer.module.scss';
+import Image from 'next/image';
 
 export function CartDrawer() {
     const dispatch = useDispatch();
-    const { items, isOpen } = useSelector((state: RootState) => state.cart);
+
+    const { items, isOpen, purchaseFinished } = useSelector(
+        (state: RootState) => state.cart
+    );
+
     if (!isOpen) return null;
+
+    const totalValue = items.reduce((total, item) => {
+        const price = Number(item.price);
+        return total + price * item.quantity;
+    }, 0);
+
 
     return (
         <div className={styles.overlay} onClick={() => dispatch(closeCart())}>
@@ -39,8 +50,25 @@ export function CartDrawer() {
                 </div>
 
                 <footer className={styles.footer}>
-                    <button className={styles.checkout}>
-                        FINALIZAR COMPRA
+                    <div className={styles.totalPrice}>
+                        <p>TOTAL</p>
+                        <div className={styles.price}>
+                            <Image
+                                src="/assets/eth-logo.svg"
+                                alt="ETH"
+                                width={34}
+                                height={34}
+                            />
+                            <span>{totalValue.toFixed(0)} ETH</span>
+                        </div>
+                    </div>
+
+                    <button
+                        className={styles.button}
+                        onClick={() => dispatch(finalizePurchase())}
+                        disabled={purchaseFinished || items.length === 0}
+                    >
+                        {purchaseFinished ? 'COMPRA FINALIZADA!' : 'FINALIZAR COMPRA'}
                     </button>
                 </footer>
             </aside>

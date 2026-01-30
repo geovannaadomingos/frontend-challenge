@@ -38,7 +38,7 @@ export function NFTCard({ nft }: NFTCardProps) {
                         width={24}
                         height={24}
                     />
-                    <span>{nft.price} ETH</span>
+                    <span>{Number(nft.price).toFixed(0)} ETH</span>
                 </div>
 
                 <button

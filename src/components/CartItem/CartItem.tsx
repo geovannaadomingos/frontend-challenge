@@ -23,7 +23,7 @@ export function CartItem({ nft }: { nft: CartItem }) {
             width={29}
             height={29}
           />
-          <span>{nft.price} ETH</span>
+          <span>{Number(nft.price).toFixed(0)} ETH</span>
         </div>
 
         <div className={styles.footer}>
