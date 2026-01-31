@@ -10,9 +10,12 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
-
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
   },
+  testMatch: [
+    "**/__tests__/**/*.test.(ts|tsx)",
+    "**/?(*.)+(spec|test).(ts|tsx)"
+  ],
 };

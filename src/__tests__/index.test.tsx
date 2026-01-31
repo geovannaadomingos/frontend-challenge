@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Home from './index';
+import Home from '@/pages/index';
 import { useNFTList } from '@/hooks/useNFTList';
 
 jest.mock('@/hooks/useNFTList');
