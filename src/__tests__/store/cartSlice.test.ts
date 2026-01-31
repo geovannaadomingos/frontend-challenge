@@ -4,7 +4,7 @@ import cartReducer, {
     toggleCart,
     closeCart,
     finalizePurchase,
-} from './cartSlice';
+} from '@/store/cartSlice';
 import { NFT } from '@/types/nft.types';
 
 const nftMock: NFT = {

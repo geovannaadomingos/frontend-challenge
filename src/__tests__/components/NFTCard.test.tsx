@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { NFTCard } from './NFTCard';
+import { NFTCard } from '@/components/NFTCard/NFTCard';
 import { NFT } from '@/types/nft.types';
 import { addItem, removeItem } from '@/store/cartSlice';
 

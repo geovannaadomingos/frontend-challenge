@@ -82,6 +82,12 @@ src/
  │   ├─ globals.scss
  │   └─ _variables.scss
  │
+ ├─ __tests__/
+ │   ├─ components/
+ │   ├─ pages/
+ │   ├─ services/
+ │   └─ store/
+ │
  └─ types/
      └─ nft.types.ts
 ```

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchNFTList } from './nft-api';
+import { fetchNFTList } from '@/services/nft-api';
 import { NFTListResponse } from '@/types/nft.types';
 
 jest.mock('axios', () => {
